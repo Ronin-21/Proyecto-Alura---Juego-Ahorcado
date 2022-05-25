@@ -3,7 +3,9 @@ let btnAgregar = document.querySelector(".btn-agregar");
 let campoTexto = document.querySelector(".input");
 const listaPalabras = ["abel", "aldo", "chipy", "jonny"];
 let palabraSorteada = "";
-let resultado = [];
+let letraSeleccionada;
+let aciertos = [];
+let errores = [];
 
 function sortearPalabra(maximo){
     return Math.floor(Math.random()*maximo);
@@ -17,6 +19,7 @@ function agregarPalabra(){
 
 function iniciarJuego(){
     document.querySelector(".seccion-inicio").classList.add("oculto");
+    document.querySelector(".seccion-juego").classList.remove("oculto");
     palabraSorteada = listaPalabras[sortearPalabra(listaPalabras.length)].toUpperCase();
     console.log(palabraSorteada);
     document.addEventListener("keydown", comprobarLetra);
@@ -24,13 +27,20 @@ function iniciarJuego(){
 }
 
 function comprobarLetra(event){
-    let letraSeleccionada = event.key.toUpperCase();
+    letraSeleccionada = event.key.toUpperCase();
     if (palabraSorteada.includes(letraSeleccionada)){
-        resultado.push(letraSeleccionada);
-        console.log(resultado);
+        if (aciertos.includes(letraSeleccionada)){
+            return false;
+        }
+        aciertos.push(letraSeleccionada);
+        console.log(aciertos);
     }
     else {
-        console.log(letraSeleccionada);
+        if (errores.includes(letraSeleccionada)){
+            return false;
+        }
+        errores.push(letraSeleccionada);
+        console.log(errores);
     }
 }
 

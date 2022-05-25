@@ -17,11 +17,20 @@
         <h1 class="titulo">¡Bienvenidos al Juego del Ahorcado!</h1>
     </header>
     <main class="main-container">
-        <div class="seccion-inicio">
+        <section class="seccion-inicio">
             <input type="password" class="input">
             <button class="boton btn-iniciar">Iniciar Juego</button>
             <button class="boton btn-agregar">Agregar nueva palabra</button>
-        </div>
+        </section>
+        <section class="seccion-juego oculto">
+            <div class="imagen"></div>
+            <div class="aciertos"></div>
+            <div class="errores"></div>
+            <div class="boton-container">
+                <button class="boton btn-nuevojuego">Nuevo Juego</button>
+                <button class="boton btn-rendirse">Rendirse</button>
+            </div>
+        </section>
     </main>
     <footer class="footer">
         <p class="copyright">RoninWebDesign || Abel Alejandro Acuña</p>

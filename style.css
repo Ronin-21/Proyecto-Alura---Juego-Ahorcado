@@ -3,16 +3,16 @@
 :root{
     --blanco: #FFFFFF;
     --negro: #000000;
-    --bg-color: #F3F5FC;
-    --pri-color: #0A3871;
-    --sec-color: #E5E5E5;
-    --letter-color: #495057;
-    --letter-color-st: #343A40;
-    --sombra: 0px 24px 32px -8px rgba(0, 0, 0, 0.29);
+    --pri-color: #295d09;
+    --sec-color: #aed36c;
+    --pri-color_light: #69ab3d;
+    --sec-color_light: #e9ebed;
+    --sombra: 0px 24px 32px -8px var(--pri-color_light);
 }
 
 body {
     min-height: 100vh;
+    background-color: var(--sec-color_light);
     font-size: 20px;
     font-family:'Alegreya Sans', sans-serif;
     color:var(--pri-color);
@@ -25,15 +25,11 @@ body {
     "footer" 5%;
 }
 
-.oculto>*{
-    display: none;
-}
 
 /*  HEADER  */
 .header{
     grid-area: header;
     display: flex;
-    align-items: center;
 }
 
 .logo{
@@ -44,7 +40,9 @@ body {
 .titulo{
     font-family: 'Pacifico', cursive;
     font-size: 2.5em;
+    color: var(--pri-color);
     margin: auto;
+    transform: translateX(-40px);
 }
 
 /*  MAIN  */
@@ -52,6 +50,7 @@ body {
     grid-area: main;
 }
 
+/*-----------------------------*/
 .seccion-inicio{
     display: flex;
     flex-direction: column;
@@ -61,7 +60,7 @@ body {
 }
 
 .input{
-    background: linear-gradient(to top, #8DBAFE, transparent);
+    background: linear-gradient(to top, var(--sec-color), transparent);
     width: 22ch;
     font-size: 1.5em;
     line-height: 1.4;
@@ -72,21 +71,64 @@ body {
 .boton{
     max-width: 300px;
     font-weight: 500;
-    color: var(--sec-color);
+    color: var(--sec-color_light);
     padding: 1.2em;
     border-radius: 35px;
-    border: 1px solid var(--pri-color);
+    border: 2px solid var(--pri-color);
     background-color: var(--pri-color);
     box-shadow: var(--sombra);
+    cursor: pointer;
 }
-
 .btn-iniciar{
     width: 100%;
 }
-
 .btn-agregar{
-    background-color: var(--sec-color);
+    background-color: var(--sec-color_light);
     color: var(--pri-color);
+}
+/*------------------------------*/
+.seccion-juego{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+}
+
+.imagen{
+    width: 300px;
+    height: 500px;
+    border: 2px solid var(--pri-color);
+}
+.aciertos{
+    width: 500px;
+    height: 80px;
+    border: 2px solid var(--pri-color);
+}
+.errores{
+    width: 350px;
+    height: 70px;
+    border: 2px solid var(--pri-color);
+}
+
+.boton-container{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+.btn-nuevojuego{
+    width: 100%;
+}
+.btn-rendirse{
+    width: 100%;
+    background-color: var(--sec-color_light);
+    color: var(--pri-color);
+}
+
+/*---------------------------*/
+.oculto>*, .oculto>did{
+    display: none;
 }
 
 /*  FOOTER  */
