@@ -6,26 +6,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alura | Juego del Ahorcado</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/reset.css">
     <script src="https://kit.fontawesome.com/eb9fc79dc8.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <header class="header">
-        <a href="https://www.aluracursos.com/" target="_blank"><img class="logo" src="img/Logo.png" alt="Logo"></a>
+        <a href="https://www.aluracursos.com/" target="_blank"><img class="logo" src="img/Logo.svg" alt="Logo"></a>
         <h1 class="titulo">¡Bienvenidos al Juego del Ahorcado!</h1>
     </header>
     <main class="main-container">
         <section class="seccion-inicio">
-            <input type="password" class="input">
+            <input type="password" class="nueva-palabra" maxlength="10" placeholder="Ingrese su palabra secreta aquí"
+                autofocus>
+            <p>Máximo 10 letras sin comas ni espacios</p>
             <button class="boton btn-iniciar">Iniciar Juego</button>
             <button class="boton btn-agregar">Agregar nueva palabra</button>
         </section>
         <section class="seccion-juego oculto">
-            <div class="imagen"></div>
-            <div class="aciertos"></div>
-            <div class="errores"></div>
+            <canvas class="lienzo" width="350px" height="500px"></canvas>
+            <div class="palabra-secreta"></div>
+            <div class="letras-usadas"></div>
             <div class="boton-container">
                 <button class="boton btn-nuevojuego">Nuevo Juego</button>
                 <button class="boton btn-rendirse">Rendirse</button>
@@ -37,7 +39,10 @@
         <a href="https://github.com/Ronin-21" target="_blank"><i class="fa-brands fa-github"></i></a>
         <a href="https://www.facebook.com/abel.acuna.9/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
     </footer>
-    <script src="script.js"></script>
+
+    <script src="js/palabras.js"></script>
+    <script src="js/canvas.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>

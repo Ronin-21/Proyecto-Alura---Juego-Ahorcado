@@ -3,16 +3,16 @@
 :root{
     --blanco: #FFFFFF;
     --negro: #000000;
-    --pri-color: #295d09;
-    --sec-color: #aed36c;
-    --pri-color_light: #69ab3d;
-    --sec-color_light: #e9ebed;
-    --sombra: 0px 24px 32px -8px var(--pri-color_light);
+    --pri-color: #0a2d48;
+    --sec-color: #ffd782;
+    --pri-color_light: #46a8a7;
+    --sec-color_light: #eaebed;
+    --sombra: 0px 10px 15px -5px var(--negro);
 }
 
 body {
     min-height: 100vh;
-    background-color: var(--sec-color_light);
+    background-image: url(../img/fondo.jpg);
     font-size: 20px;
     font-family:'Alegreya Sans', sans-serif;
     color:var(--pri-color);
@@ -20,7 +20,7 @@ body {
     display: grid;
     align-items: center;
     grid-template:
-    "header" 10%
+    "header" 20%
     "main"   auto
     "footer" 5%;
 }
@@ -29,6 +29,7 @@ body {
 /*  HEADER  */
 .header{
     grid-area: header;
+    height: 100%;
     display: flex;
 }
 
@@ -40,14 +41,27 @@ body {
 .titulo{
     font-family: 'Pacifico', cursive;
     font-size: 2.5em;
-    color: var(--pri-color);
+    color: var(--sec-color);
     margin: auto;
+    padding-bottom: 20px;
     transform: translateX(-40px);
+    text-shadow: 2px 2px 5px var(--negro);
 }
 
 /*  MAIN  */
 .main-container{
     grid-area: main;
+    position: relative;
+    top: -50px;
+    width: 80%;
+    height: 100%;
+    margin: auto;
+    background-color: #eaebed3e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    box-shadow: 0 0 15px var(--negro);
 }
 
 /*-----------------------------*/
@@ -59,13 +73,25 @@ body {
     gap: 1em;
 }
 
-.input{
-    background: linear-gradient(to top, var(--sec-color), transparent);
-    width: 22ch;
-    font-size: 1.5em;
+.nueva-palabra{
+    width: 400px;
+    font-size: 40px;
     line-height: 1.4;
+    color: var(--sec-color_light);
     outline: none;
+    border-bottom: 2px solid var(--negro);
     text-align: center;
+}
+
+.nueva-palabra::placeholder{
+    font-size: 30px;
+    color: var(--pri-color_light);
+}
+
+.seccion-inicio p{
+    color: var(--sec-color);
+    font-size: 18px;
+    margin: -10px 10px;
 }
 
 .boton{
@@ -73,9 +99,8 @@ body {
     font-weight: 500;
     color: var(--sec-color_light);
     padding: 1.2em;
-    border-radius: 35px;
-    border: 2px solid var(--pri-color);
-    background-color: var(--pri-color);
+    border-radius: 30px;
+    background-color: var(--pri-color_light);
     box-shadow: var(--sombra);
     cursor: pointer;
 }
@@ -86,6 +111,16 @@ body {
     background-color: var(--sec-color_light);
     color: var(--pri-color);
 }
+
+.boton:hover{
+    transform: scale(1.1);
+    background-color: var(--pri-color);
+    transition: all .4s ease;
+}
+.btn-agregar:hover, .btn-rendirse:hover{
+    background-color: var(--sec-color_light);
+}
+
 /*------------------------------*/
 .seccion-juego{
     display: flex;
@@ -93,26 +128,34 @@ body {
     align-items: center;
     justify-content: center;
     gap: 1em;
+    padding: 30px;
 }
 
-.imagen{
-    width: 300px;
-    height: 500px;
-    border: 2px solid var(--pri-color);
-}
-.aciertos{
+.palabra-secreta {
     width: 500px;
-    height: 80px;
-    border: 2px solid var(--pri-color);
+    font-size: 30px;
+    text-align: center;
+    color: var(--sec-color_light);
 }
-.errores{
-    width: 350px;
-    height: 70px;
-    border: 2px solid var(--pri-color);
+.palabra-secreta span{
+    user-select: none;
+    display: inline-block;
+    width: 30px;
+    border-bottom: 2px solid var(--pri-color);
+    margin: 5px;
+    padding: 5px;
+}
+
+.letras-usadas{
+    width: 400px;
+    font-size: 25px;
+    text-align: center;
+    color: var(--sec-color);
+    margin: 5px;
 }
 
 .boton-container{
-    width: 50%;
+    width: 100%;
     display: flex;
     justify-content: center;
     gap: 1em;
@@ -127,18 +170,23 @@ body {
 }
 
 /*---------------------------*/
-.oculto>*, .oculto>did{
+.oculto>*, .oculto>div{
     display: none;
+}
+
+.transparente{
+    color: transparent;
 }
 
 /*  FOOTER  */
 .footer{
     grid-area: footer;
     height: 100%;
+    margin-top: 3em;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 1em;
-    background-color: var(--pri-color);
+    background-color: #17181c6a;
     color: var(--blanco);
 }
