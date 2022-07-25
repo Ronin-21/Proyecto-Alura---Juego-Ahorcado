@@ -1,48 +1,102 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Alura | Juego del Ahorcado</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/reset.css">
-    <script src="https://kit.fontawesome.com/eb9fc79dc8.js" crossorigin="anonymous"></script>
-</head>
+    <link rel="shortcut icon" href="img/Logo.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <script
+      src="https://kit.fontawesome.com/eb9fc79dc8.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-<body>
+  <body>
     <header class="header">
-        <a href="https://www.aluracursos.com/" target="_blank"><img class="logo" src="img/Logo.svg" alt="Logo"></a>
-        <h1 class="titulo">¡Bienvenidos al Juego del Ahorcado!</h1>
+      <a
+        href="https://www.aluracursos.com/"
+        target="_blank"
+        rel="noreferer noopener"
+        ><img class="logo" src="img/Logo.svg" alt="Logo"
+      /></a>
+      <h1 class="titulo">¡Bienvenidos al Juego del Ahorcado!</h1>
     </header>
     <main class="main-container">
-        <section class="seccion-inicio">
-            <input type="password" class="nueva-palabra" maxlength="10" placeholder="Ingrese su palabra secreta aquí"
-                autofocus>
-            <p>Máximo 10 letras sin comas ni espacios</p>
-            <button class="boton btn-iniciar">Iniciar Juego</button>
-            <button class="boton btn-agregar">Agregar nueva palabra</button>
-        </section>
-        <section class="seccion-juego oculto">
-            <canvas class="lienzo" width="350px" height="500px"></canvas>
-            <div class="palabra-secreta"></div>
-            <div class="letras-usadas"></div>
-            <div class="boton-container">
-                <button class="boton btn-nuevojuego">Nuevo Juego</button>
-                <button class="boton btn-rendirse">Rendirse</button>
-            </div>
-        </section>
+      <section class="seccion-inicio">
+        <input
+          type="password"
+          class="nueva-palabra"
+          maxlength="10"
+          placeholder="Ingrese su palabra secreta aquí"
+          autofocus
+        />
+        <p>Máximo 10 letras sin comas ni espacios</p>
+        <button class="boton btn-iniciar">Iniciar Juego</button>
+        <button class="boton btn-agregar">Agregar nueva palabra</button>
+      </section>
+      <section class="seccion-juego oculto">
+        <canvas class="lienzo" width="350px" height="500px"></canvas>
+        <div class="palabra-secreta"></div>
+        <div class="letras-usadas"></div>
+        <div class="teclado-virtual oculto">
+          <div class="teclado-fila">
+            <div class="teclas">Q</div>
+            <div class="teclas">W</div>
+            <div class="teclas">E</div>
+            <div class="teclas">R</div>
+            <div class="teclas">T</div>
+            <div class="teclas">Y</div>
+            <div class="teclas">U</div>
+            <div class="teclas">I</div>
+            <div class="teclas">O</div>
+            <div class="teclas">P</div>
+          </div>
+          <div class="teclado-fila">
+            <div class="teclas">A</div>
+            <div class="teclas">S</div>
+            <div class="teclas">D</div>
+            <div class="teclas">F</div>
+            <div class="teclas">G</div>
+            <div class="teclas">H</div>
+            <div class="teclas">J</div>
+            <div class="teclas">K</div>
+            <div class="teclas">L</div>
+            <div class="teclas">Ñ</div>
+          </div>
+          <div class="teclado-fila">
+            <div class="teclas">Z</div>
+            <div class="teclas">X</div>
+            <div class="teclas">C</div>
+            <div class="teclas">V</div>
+            <div class="teclas">B</div>
+            <div class="teclas">N</div>
+            <div class="teclas">M</div>
+          </div>
+        </div>
+        <div class="boton-container">
+          <button class="boton btn-nuevojuego">Nuevo Juego</button>
+          <button class="boton btn-rendirse">Rendirse</button>
+        </div>
+      </section>
     </main>
     <footer class="footer">
-        <p class="copyright">RoninWebDesign || Abel Alejandro Acuña</p>
-        <a href="https://github.com/Ronin-21" target="_blank"><i class="fa-brands fa-github"></i></a>
-        <a href="https://www.facebook.com/abel.acuna.9/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+      <p class="copyright">RoninWebDesign || Abel Alejandro Acuña</p>
+      <div class="social">
+        <a href="https://github.com/Ronin-21" target="_blank"
+          ><i class="fa-brands fa-github"></i
+        ></a>
+        <a href="https://www.facebook.com/abel.acuna.9/" target="_blank"
+          ><i class="fa-brands fa-facebook"></i
+        ></a>
+      </div>
     </footer>
 
     <script src="js/palabras.js"></script>
     <script src="js/canvas.js"></script>
     <script src="js/script.js"></script>
-</body>
-
+  </body>
 </html>

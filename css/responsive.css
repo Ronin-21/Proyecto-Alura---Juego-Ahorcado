@@ -1,0 +1,190 @@
+@media screen and (max-width: 1440px) {
+  body {
+    font-size: 18px;
+    grid-template:
+      "header" 30%
+      "main" auto
+      "footer" 5%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 16px;
+    grid-template:
+      "header" 30%
+      "main" auto
+      "footer" 5%;
+  }
+
+  .logo {
+    max-width: 30px;
+    margin: 1.5em;
+  }
+
+  .nueva-palabra::placeholder {
+    font-size: 25px;
+    color: var(--pri-color_light);
+  }
+
+  .boton {
+    max-width: 250px;
+  }
+
+  canvas {
+    height: 400px;
+  }
+
+  .seccion-juego {
+    padding-top: 0;
+  }
+
+  /*--------TECLADO---------*/
+  .teclado-virtual {
+    max-width: 95%;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .teclado-fila {
+    display: flex;
+    gap: 10px;
+  }
+
+  .teclas {
+    background-color: var(--pri-color_light);
+    width: 50px;
+    height: 50px;
+    color: var(--sec-color_light);
+    text-align: center;
+    line-height: 50px;
+    border-radius: 10%;
+  }
+}
+
+@media screen and (width: 320px) {
+  body {
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /*  HEADER  */
+  .header {
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  .logo {
+    max-width: 25px;
+    margin: 1em;
+  }
+
+  .titulo {
+    line-height: 1.5em;
+    margin: 0;
+    padding: 0 0.5em;
+    transform: translate(0);
+    text-align: center;
+  }
+
+  /*  MAIN  */
+  .main-container {
+    margin: 10em auto 0;
+    min-height: 600px;
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /*-----------------------------*/
+  .seccion-inicio {
+    width: 100%;
+  }
+
+  .nueva-palabra {
+    width: 95%;
+    font-size: 30px;
+  }
+
+  .nueva-palabra::placeholder {
+    font-size: 24px;
+  }
+
+  .seccion-inicio p {
+    font-size: 16px;
+    margin: 0 0 1em;
+  }
+
+  .boton {
+    padding: 1em;
+    font-size: 1.5em;
+  }
+
+  /*------------------------------*/
+  .seccion-juego {
+    padding: 0;
+  }
+
+  .palabra-secreta {
+    width: 100%;
+    font-size: 22px;
+  }
+  .palabra-secreta span {
+    width: 16px;
+    margin: 5px;
+    padding: 5px;
+  }
+
+  .letras-usadas {
+    width: 95%;
+    font-size: 18px;
+  }
+
+  .boton-container {
+    margin-top: 1em;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn-rendirse {
+    margin-bottom: 1.5em;
+  }
+
+  /*--------TECLADO---------*/
+  .teclado-virtual {
+    max-width: 95%;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .teclado-fila {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+  }
+
+  /*  FOOTER  */
+  .footer {
+    width: 100%;
+    font-size: 1.5em;
+    flex-direction: column;
+  }
+
+  .social {
+    font-size: 2em;
+  }
+}
