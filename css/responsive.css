@@ -1,3 +1,70 @@
+@media screen and (min-width: 1440px) {
+  body {
+    font-size: 18px;
+    grid-template:
+      "header" 30%
+      "main" auto
+      "footer" 5%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 16px;
+    grid-template:
+      "header" 30%
+      "main" auto
+      "footer" 5%;
+  }
+
+  .logo {
+    max-width: 30px;
+    margin: 1.5em;
+  }
+
+  .nueva-palabra::placeholder {
+    font-size: 25px;
+    color: var(--pri-color_light);
+  }
+
+  .boton {
+    max-width: 250px;
+  }
+
+  canvas {
+    height: 400px;
+  }
+
+  .seccion-juego {
+    padding-top: 0;
+  }
+
+  /*--------TECLADO---------*/
+  .teclado-virtual {
+    max-width: 95%;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .teclado-fila {
+    display: flex;
+    gap: 10px;
+  }
+
+  .teclas {
+    background-color: var(--pri-color_light);
+    width: 50px;
+    height: 50px;
+    color: var(--sec-color_light);
+    text-align: center;
+    line-height: 50px;
+    border-radius: 10%;
+  }
+}
+
 @media screen and (max-width: 425px) {
   body {
     font-size: 12px;
@@ -95,8 +162,8 @@
 
   /*--------TECLADO---------*/
   .teclado-virtual {
-    max-width: 95%;
-    min-height: 200px;
+    max-width: 100%;
+    min-height: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -104,10 +171,18 @@
   }
 
   .teclado-fila {
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 5px;
+  }
+
+  .teclas {
+    font-size: 1.3em;
+    width: 29px;
+    height: 29px;
+    line-height: 30px;
   }
 
   /*  FOOTER  */
@@ -119,72 +194,5 @@
 
   .social {
     font-size: 2em;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  body {
-    font-size: 16px;
-    grid-template:
-      "header" 30%
-      "main" auto
-      "footer" 5%;
-  }
-
-  .logo {
-    max-width: 30px;
-    margin: 1.5em;
-  }
-
-  .nueva-palabra::placeholder {
-    font-size: 25px;
-    color: var(--pri-color_light);
-  }
-
-  .boton {
-    max-width: 250px;
-  }
-
-  canvas {
-    height: 400px;
-  }
-
-  .seccion-juego {
-    padding-top: 0;
-  }
-
-  /*--------TECLADO---------*/
-  .teclado-virtual {
-    max-width: 95%;
-    min-height: 200px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .teclado-fila {
-    display: flex;
-    gap: 10px;
-  }
-
-  .teclas {
-    background-color: var(--pri-color_light);
-    width: 50px;
-    height: 50px;
-    color: var(--sec-color_light);
-    text-align: center;
-    line-height: 50px;
-    border-radius: 10%;
-  }
-}
-
-@media screen and (min-width: 1440px) {
-  body {
-    font-size: 18px;
-    grid-template:
-      "header" 30%
-      "main" auto
-      "footer" 5%;
   }
 }
