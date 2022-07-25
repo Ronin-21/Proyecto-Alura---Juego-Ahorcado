@@ -72,8 +72,8 @@ function teclasQwerty() {
     tecla.addEventListener("click", (e) => {
       e.target.style.backgroundColor = "#ffd782";
       e.target.style.color = "#0a2d48";
-      tecla = e.target.innerHTML;
-      comprobarLetraQwerty(tecla);
+      let tecla = e.target.innerHTML;
+      comprobarLetra(tecla);
     });
   });
 }
@@ -93,48 +93,16 @@ function iniciarJuego() {
     teclasQwerty();
   } else {
     tecladoVirtual.classList.add("oculto");
-    document.addEventListener("keydown", comprobarLetra);
+    document.addEventListener("keydown", (e) => {
+      let tecla = e.key.toUpperCase();
+      comprobarLetra(tecla);
+    });
   }
 }
 
 // Comprobar las teclas presionadas por el teclado //
-function comprobarLetra(event) {
-  let letraSeleccionada = event.key.toUpperCase();
-  // Primero validamos que se ingrese un caractér correcto
-  if (
-    !letraSeleccionada.match(/^[A-ZÑ]$/i) ||
-    auxAciertos.includes(letraSeleccionada)
-  ) {
-  } else {
-    // Inicia el bucle donde comprueba la letra presionada
-    for (let i = 0; i < palabraSorteada.length; i++) {
-      if (letraSeleccionada == palabraSorteada[i]) {
-        mostrarLetras(i);
-        auxAciertos.push(letraSeleccionada);
-        aciertos++;
-      } else if (
-        auxErrores.includes(letraSeleccionada) ||
-        palabraSorteada.includes(letraSeleccionada)
-      ) {
-        continue;
-      } else {
-        auxErrores.push(letraSeleccionada);
-        letrasErroneas.insertAdjacentHTML(
-          "beforeend",
-          `<span>${letraSeleccionada}</span>`
-        );
-        agregarPartesAhorcado(errores);
-        errores++;
-      }
-    }
-  }
-  finDelJuego();
-}
-
-// Comprobar las teclas presionadas por el teclado virtual //
-function comprobarLetraQwerty(letra) {
+function comprobarLetra(letra) {
   let letraSeleccionada = letra;
-  console.log(letraSeleccionada);
   // Primero validamos que se ingrese un caractér correcto
   if (
     !letraSeleccionada.match(/^[A-ZÑ]$/i) ||
